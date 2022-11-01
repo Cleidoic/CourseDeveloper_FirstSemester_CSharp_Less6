@@ -36,17 +36,19 @@ int IsPositive(int[] array)
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] >= 0)
+        if (array[i] > 0)
             count++;
     }
-    Console.WriteLine("Положительных чисел в массиве: {0}", count);
+    
     return count;
 }
 
 
-IsPositive(
-    GetArray(
-        GetNumber("Введите размер массива: ")
+Console.WriteLine("Положительных чисел в массиве: {0}", 
+    IsPositive(
+        GetArray(
+            GetNumber("Введите размер массива: ")
+        )
     )
 );
 
