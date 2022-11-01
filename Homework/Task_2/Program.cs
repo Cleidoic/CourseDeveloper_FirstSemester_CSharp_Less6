@@ -22,7 +22,6 @@ int GetNumber(string message)
 
 void GetPoint(int k1, int b1, int k2, int b2)
 {
-    double[] result = new double[2];
     double x = (double)(b2 - b1) / (k1 - k2);
     double y1 = k1 * x + b1;
     double y2 = k2 * x + b2;
