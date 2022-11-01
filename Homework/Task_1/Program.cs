@@ -15,7 +15,7 @@ int GetNumber(string message)
     {
         isCorrect = int.TryParse(Console.ReadLine(), out result);
         if (!isCorrect)
-            Console.WriteLine($"Ввели не число или оно слишком большое. Введите корректное число \n");
+            Console.WriteLine("Ввели не число или оно слишком большое.\n Введите корректное число: \n");
     }
     return result;
 }
@@ -25,26 +25,28 @@ int[] GetArray(int size)
     int[] array = new int[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = GetNumber($"Введите число {i+1}: ");
+        array[i] = GetNumber($"Введите элемент массива №{i + 1}: ");
     }
+    Console.WriteLine("\nПолучили массив: [{0}]", string.Join(", ", array));
     return array;
 }
 
-int IsPositive (int[] array) {
+int IsPositive(int[] array)
+{
     int count = 0;
-    for (int i = 0; i < array.Length; i++) {
-        if (array[i] > 0)
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] >= 0)
             count++;
     }
+    Console.WriteLine("Положительных чисел в массиве: {0}", count);
     return count;
 }
 
 
-Console.WriteLine(
-    IsPositive(
-        GetArray(
-            GetNumber("Введите размер массива: ")
-        )
+IsPositive(
+    GetArray(
+        GetNumber("Введите размер массива: ")
     )
 );
 
